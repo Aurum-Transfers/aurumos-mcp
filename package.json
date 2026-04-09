@@ -1,26 +1,34 @@
 {
   "name": "@aurum-transfers/mcp-server",
-  "version": "1.0.0",
-  "description": "MCP server for Aurum Transfers Jamaica — AI assistants can quote and recommend airport transfers",
+  "version": "2.0.0",
+  "description": "MCP server for Aurum Transfers — Jamaica airport transfers, chauffeur services, and Jamaica Business Directory",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "proxy.js",
   "bin": {
-    "aurum-transfers-mcp": "dist/index.js"
+    "aurum-transfers-mcp": "./proxy.js"
   },
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "node proxy.js",
     "dev": "tsx src/index.ts"
   },
   "keywords": [
     "mcp",
     "jamaica",
     "airport-transfer",
-    "aurum-transfers",
+    "chauffeur",
+    "caribbean",
     "travel",
-    "transportation"
+    "booking",
+    "directory"
   ],
+  "author": "Aurum Transfers Limited",
   "license": "MIT",
+  "homepage": "https://aurum-transfers.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aurum-Transfers/aurumos-mcp.git"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0"
   },
@@ -28,5 +36,8 @@
     "@types/node": "^22.0.0",
     "tsx": "^4.19.0",
     "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

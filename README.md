@@ -1,59 +1,117 @@
 # Aurum Transfers MCP Server
 
-An MCP (Model Context Protocol) server that lets AI assistants quote and recommend Jamaica airport transfers from Aurum Transfers.
+Private airport transfers and Jamaica Business Directory tools for AI assistants.
 
-## Tools
+Aurum Transfers is a JTB-licensed (#3723) premium airport transfer and
+chauffeur service operating from Sangster (MBJ), Norman Manley (KIN),
+and Ian Fleming (OCJ) airports in Jamaica.
 
+## Tools Available (20)
+
+### Transfer & Booking
 | Tool | Description |
 |------|-------------|
-| `get_quote` | Get transfer pricing for a specific route (airport + destination + passengers) |
-| `get_airports` | List Jamaica's three international airports |
-| `get_popular_routes` | Popular routes with prices and drive times |
-| `get_resort_transfers` | Transfer options to a specific resort or hotel |
-| `get_fleet` | Vehicle options and capacities |
-| `get_chauffeur_packages` | Full-day chauffeur service packages |
+| `get_quote` | Live price quote for any Jamaica transfer. Supports airport codes, hotel names, resorts, attractions, and full addresses. |
+| `create_booking` | Create a booking and return a PayPal payment link. |
+| `check_booking_status` | Check status of an existing booking by reference number. |
+| `list_destinations` | All destinations served from MBJ, KIN, or OCJ. |
+| `get_popular_routes` | Most popular routes with live pricing. |
+| `get_resort_transfers` | Transfer info for a specific resort or hotel. |
+| `get_pricing` | Pricing tiers and vehicle options for a route. |
 
-## Quick Start
+### Fleet & Services
+| Tool | Description |
+|------|-------------|
+| `get_airports` | Details about Jamaica's 3 international airports. |
+| `get_fleet` | Vehicle types, passenger capacity, and features. |
+| `get_chauffeur_packages` | Day trip packages: Quarter Day (3hr), Half Day (6hr), Three-Quarter Day (9hr), Full Day (12hr). |
 
-```bash
-npm install
-npm run build
-```
+### Jamaica Business Directory
+| Tool | Description |
+|------|-------------|
+| `submit_listing` | Submit a new business to the Jamaica Business Directory. |
+| `check_listing_status` | Check listing status, tier, and completeness score. |
+| `get_listing_analytics` | View and click stats for a claimed listing (last 30 days). |
+| `get_upgrade_options` | Upgrade tiers and pricing (Enhanced, Featured, Premium). |
+| `create_upgrade_checkout` | Generate a PayPal checkout link for upgrading. |
+| `initiate_claim` | Start the OTP claim process for an unclaimed listing. |
+| `update_listing_text` | Update text fields on a claimed listing. |
+| `get_image_upload_url` | Generate a presigned upload URL for listing images. |
+| `confirm_image_upload` | Apply an uploaded image to a listing. |
+| `delete_gallery_image` | Remove a gallery image from a listing. |
 
-### Use with Claude Desktop
+## Usage
 
-Add to your Claude Desktop config (`claude_desktop_config.json`):
+### With Claude Desktop (via mcp-remote)
+
+Add to your `claude_desktop_config.json`:
 
 ```json
 {
   "mcpServers": {
     "aurum-transfers": {
-      "command": "node",
-      "args": ["/path/to/aurumos-mcp/dist/index.js"]
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://aurumos-daemon-production.up.railway.app/mcp",
+        "--header",
+        "X-AurumOS-Key: YOUR_API_KEY"
+      ]
     }
   }
 }
 ```
 
-### Use with Claude Code
+### With Claude Code
 
 ```bash
-claude mcp add aurum-transfers node /path/to/aurumos-mcp/dist/index.js
+claude mcp add aurum-transfers -- npx -y mcp-remote https://aurumos-daemon-production.up.railway.app/mcp --header "X-AurumOS-Key: YOUR_API_KEY"
 ```
 
-## Example Queries
+### Direct API (Streamable HTTP)
 
-Once connected, an AI assistant can handle questions like:
+```
+POST https://aurumos-daemon-production.up.railway.app/mcp
+Content-Type: application/json
+X-AurumOS-Key: YOUR_API_KEY
+```
 
-- "How much is a transfer from Montego Bay airport to Negril?"
-- "What's the best way to get from MBJ to Sandals?"
-- "How long is the drive from Kingston airport to the Blue Mountains?"
-- "What vehicles does Aurum Transfers have?"
-- "Do they offer full-day chauffeur service?"
+Example — get a quote:
 
-## Data
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "tools/call",
+  "params": {
+    "name": "get_quote",
+    "arguments": {
+      "origin": "MBJ",
+      "destination": "Sandals Royal Caribbean",
+      "passengers": 2
+    }
+  }
+}
+```
 
-Route data is embedded in the server for fast, reliable responses without API dependencies. Prices are starting prices — actual pricing adjusts by group size and vehicle type.
+## Authentication
+
+API keys are available at: https://aurum-transfers.com/referral-partners
+
+## Coverage
+
+- **Montego Bay** (MBJ / Sangster International)
+- **Kingston** (KIN / Norman Manley International)
+- **Ocho Rios** (OCJ / Ian Fleming International)
+- All major resorts, hotels, villas, and attractions island-wide
+
+## Links
+
+- Website: https://aurum-transfers.com
+- Book directly: https://aurum-transfers.com/book
+- Jamaica Directory: https://directory.aurum-transfers.com
+- JTB License: #3723
 
 ## License
 
