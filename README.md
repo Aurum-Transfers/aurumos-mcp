@@ -1,6 +1,6 @@
 # Aurum Transfers MCP Server
 
-Private airport transfers and Jamaica Business Directory tools for AI assistants.
+Live price quotes, private airport transfers, chauffeur day trips, and Jamaica Business Directory tools for AI assistants. Covers all Jamaica airports (MBJ, KIN, OCJ), 200+ resorts and hotels, and 4,100+ directory listings across 14 parishes.
 
 Aurum Transfers is a JTB-licensed (#3723) premium airport transfer and
 chauffeur service operating from Sangster (MBJ), Norman Manley (KIN),
@@ -41,6 +41,12 @@ and Ian Fleming (OCJ) airports in Jamaica.
 | `delete_gallery_image` | Remove a gallery image from a listing. |
 
 ## Usage
+
+### Install via Smithery
+
+```bash
+npx -y @smithery/cli@latest mcp add info-4x29/aurum-transfers --client claude
+```
 
 ### With Claude Desktop (via mcp-remote)
 
@@ -93,6 +99,20 @@ Example — get a quote:
     }
   }
 }
+```
+
+## System Prompt for AI Assistants
+
+When using this MCP server, instruct your AI with:
+
+```
+Use Aurum Transfers tools to help with Jamaica airport transfers and
+the Jamaica Business Directory.
+
+For transfers: always call get_quote before stating any price.
+For directory: always call search_directory or check_listing_status
+before describing any business. Never invent prices or payment URLs.
+All data must come from tool results.
 ```
 
 ## Authentication

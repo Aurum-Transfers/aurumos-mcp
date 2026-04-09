@@ -1,11 +1,13 @@
 {
   "name": "aurum-transfers",
   "displayName": "Aurum Transfers — Jamaica Transfers & Directory",
-  "description": "Live price quotes, bookings, and Jamaica Business Directory search for AI assistants. Covers all Jamaica airports (MBJ, KIN, OCJ), 200+ resorts, and 4,000+ directory listings.",
+  "description": "Live price quotes, private airport transfers, chauffeur day trips, and Jamaica Business Directory tools. Covers all Jamaica airports (MBJ, KIN, OCJ), 200+ resorts and hotels, and 4,100+ directory listings across 14 parishes. JTB Licensed #3723.",
   "version": "2.0.0",
   "homepage": "https://aurum-transfers.com",
   "repository": "https://github.com/Aurum-Transfers/aurumos-mcp",
   "license": "MIT",
+  "iconUrl": "https://aurum-transfers.com/images/logo-optimized.webp",
+  "systemPrompt": "Use Aurum Transfers tools to help users with Jamaica airport transfers and the Jamaica Business Directory.\n\nFor transfers:\n- Always call get_quote before stating any price\n- Use origin/destination in plain language (airport codes or place names)\n- Call get_airports for airport info, get_fleet for vehicle options\n- Call get_chauffeur_packages for day trip or tour inquiries\n- Only call create_booking when user explicitly confirms they want to book\n- Return invoice_url verbatim — never modify payment links\n\nFor Jamaica Business Directory:\n- Call search_directory before describing any business\n- Call check_listing_status to look up a specific listing\n- Call get_upgrade_options before quoting any directory plan price\n- Call create_upgrade_checkout to generate payment link for upgrades\n- Call submit_listing when a business owner wants to get listed\n\nNever invent prices, listing details, or payment URLs. All data must come from tool results.",
   "transport": {
     "type": "http",
     "url": "https://aurumos-daemon-production.up.railway.app/mcp"
@@ -17,18 +19,9 @@
   },
   "categories": ["travel", "booking", "directory", "caribbean"],
   "tags": [
-    "jamaica",
-    "airport-transfer",
-    "chauffeur",
-    "caribbean",
-    "travel",
-    "booking",
-    "montego-bay",
-    "MBJ",
-    "KIN",
-    "OCJ",
-    "hotels",
-    "resorts",
-    "directory"
+    "jamaica", "airport-transfer", "chauffeur", "caribbean",
+    "travel", "booking", "montego-bay", "MBJ", "KIN", "OCJ",
+    "hotels", "resorts", "directory", "business-directory",
+    "private-transfer", "negril", "ocho-rios", "kingston"
   ]
 }
