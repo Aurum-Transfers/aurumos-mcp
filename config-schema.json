@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "aurumosKey": {
+      "type": "string",
+      "title": "AurumOS API Key",
+      "description": "API key from aurum-transfers.com/referral-partners. Required for all tool calls."
+    }
+  },
+  "required": ["aurumosKey"]
+}
