@@ -1,6 +1,6 @@
-# Aurum Transfers MCP Server
+# Aurum Transfers — Jamaica Airport Transfers & Tourist Business Directory
 
-Live price quotes, private airport transfers, chauffeur day trips, and Jamaica Business Directory tools for AI assistants. Covers all Jamaica airports (MBJ, KIN, OCJ), 200+ resorts and hotels, and 4,100+ directory listings across 14 parishes.
+Live price quotes and private airport transfers from MBJ, KIN, and OCJ airports to any Jamaica hotel, resort, villa, or attraction. Full chauffeur day trip packages. Plus: Jamaica's tourist business directory with 4,100+ hotels, restaurants, spas, and attractions across all 14 parishes. JTB Licensed #3723.
 
 Aurum Transfers is a JTB-licensed (#3723) premium airport transfer and
 chauffeur service operating from Sangster (MBJ), Norman Manley (KIN),
