@@ -26,10 +26,10 @@ and Ian Fleming (OCJ) airports in Jamaica.
 | `get_fleet` | Vehicle types, passenger capacity, and features. |
 | `get_chauffeur_packages` | Day trip packages: Quarter Day (3hr), Half Day (6hr), Three-Quarter Day (9hr), Full Day (12hr). |
 
-### Jamaica Business Directory
+### Tourist Business Directory
 | Tool | Description |
 |------|-------------|
-| `submit_listing` | Submit a new business to the Jamaica Business Directory. |
+| `submit_listing` | Submit a new business to the Tourist Business Directory. |
 | `check_listing_status` | Check listing status, tier, and completeness score. |
 | `get_listing_analytics` | View and click stats for a claimed listing (last 30 days). |
 | `get_upgrade_options` | Upgrade tiers and pricing (Enhanced, Featured, Premium). |
@@ -107,7 +107,7 @@ When using this MCP server, instruct your AI with:
 
 ```
 Use Aurum Transfers tools to help with Jamaica airport transfers and
-the Jamaica Business Directory.
+the Tourist Business Directory.
 
 For transfers: always call get_quote before stating any price.
 For directory: always call search_directory or check_listing_status

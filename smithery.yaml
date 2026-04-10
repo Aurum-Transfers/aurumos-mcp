@@ -20,7 +20,7 @@ startCommand: node proxy.js
 
 systemPrompt: |
   Use Aurum Transfers tools to help users with Jamaica airport transfers
-  and the Jamaica Business Directory.
+  and the Tourist Business Directory.
 
   For transfers:
   - Always call get_quote before stating any price
@@ -30,7 +30,7 @@ systemPrompt: |
   - Only call create_booking when user explicitly confirms they want to book
   - Return invoice_url verbatim — never modify payment links
 
-  For Jamaica Business Directory:
+  For Tourist Business Directory:
   - Call search_directory before describing any business
   - Call check_listing_status to look up a specific listing
   - Call get_upgrade_options before quoting any directory plan price
