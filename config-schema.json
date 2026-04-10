@@ -3,8 +3,29 @@
   "properties": {
     "aurumosKey": {
       "type": "string",
-      "title": "AurumOS API Key",
+      "title": "API Key",
       "description": "API key from aurum-transfers.com/referral-partners. Required for all tool calls."
+    },
+    "defaultPassengers": {
+      "type": "number",
+      "title": "Default Passengers",
+      "description": "Default number of passengers for quotes (optional, default: 2)",
+      "default": 2,
+      "minimum": 1,
+      "maximum": 20
+    },
+    "currency": {
+      "type": "string",
+      "title": "Currency",
+      "description": "Preferred currency for quotes (optional, default: USD)",
+      "default": "USD",
+      "enum": ["USD", "JMD", "CAD", "GBP", "EUR"]
+    },
+    "preferredVehicle": {
+      "type": "string",
+      "title": "Preferred Vehicle",
+      "description": "Default vehicle type for quotes (optional)",
+      "enum": ["wagon", "van", "suv", "shuttle", "coach"]
     }
   },
   "required": ["aurumosKey"]
