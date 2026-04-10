@@ -4,7 +4,8 @@
     "aurumosKey": {
       "type": "string",
       "title": "API Key",
-      "description": "API key from aurum-transfers.com/referral-partners. Required for all tool calls."
+      "description": "API key from aurum-transfers.com/referral-partners. Required for all tool calls.",
+      "default": ""
     },
     "defaultPassengers": {
       "type": "number",
@@ -28,5 +29,5 @@
       "enum": ["wagon", "van", "suv", "shuttle", "coach"]
     }
   },
-  "required": ["aurumosKey"]
+  "required": []
 }
