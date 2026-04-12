@@ -9,12 +9,12 @@ iconUrl: https://aurum-transfers.com/images/logo-optimized.webp
 
 transport:
   type: http
-  url: https://aurumos-daemon-production.up.railway.app/mcp
+  url: https://aurum-transfers.com/mcp
 
 auth:
   type: header
   header: X-AurumOS-Key
-  description: "API key from aurum-transfers.com/referral-partners"
+  description: "API key — contact us at aurum-transfers.com/contact for developer access"
 
 startCommand: node proxy.js
 

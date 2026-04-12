@@ -29,6 +29,7 @@ and Ian Fleming (OCJ) airports in Jamaica.
 ### Tourist Business Directory
 | Tool | Description |
 |------|-------------|
+| `search_directory` | Search for hotels, restaurants, attractions, spas, and services by name, parish, or category. |
 | `submit_listing` | Submit a new business to the Tourist Business Directory. |
 | `check_listing_status` | Check listing status, tier, and completeness score. |
 | `get_listing_analytics` | View and click stats for a claimed listing (last 30 days). |
@@ -60,7 +61,7 @@ Add to your `claude_desktop_config.json`:
       "args": [
         "-y",
         "mcp-remote",
-        "https://aurumos-daemon-production.up.railway.app/mcp",
+        "https://aurum-transfers.com/mcp",
         "--header",
         "X-AurumOS-Key: YOUR_API_KEY"
       ]
@@ -72,13 +73,13 @@ Add to your `claude_desktop_config.json`:
 ### With Claude Code
 
 ```bash
-claude mcp add aurum-transfers -- npx -y mcp-remote https://aurumos-daemon-production.up.railway.app/mcp --header "X-AurumOS-Key: YOUR_API_KEY"
+claude mcp add aurum-transfers -- npx -y mcp-remote https://aurum-transfers.com/mcp --header "X-AurumOS-Key: YOUR_API_KEY"
 ```
 
 ### Direct API (Streamable HTTP)
 
 ```
-POST https://aurumos-daemon-production.up.railway.app/mcp
+POST https://aurum-transfers.com/mcp
 Content-Type: application/json
 X-AurumOS-Key: YOUR_API_KEY
 ```
@@ -117,7 +118,7 @@ All data must come from tool results.
 
 ## Authentication
 
-API keys are available at: https://aurum-transfers.com/referral-partners
+API keys are available on request. [Contact us](https://aurum-transfers.com/contact) for developer access.
 
 ## Coverage
 

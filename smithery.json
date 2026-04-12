@@ -10,12 +10,12 @@
   "systemPrompt": "Use Aurum Transfers tools to help users with Jamaica airport transfers and the Tourist Business Directory.\n\nFor transfers:\n- Always call get_quote before stating any price\n- Use origin/destination in plain language (airport codes or place names)\n- Call get_airports for airport info, get_fleet for vehicle options\n- Call get_chauffeur_packages for day trip or tour inquiries\n- Only call create_booking when user explicitly confirms they want to book\n- Return invoice_url verbatim — never modify payment links\n\nFor Tourist Business Directory:\n- Call search_directory before describing any business\n- Call check_listing_status to look up a specific listing\n- Call get_upgrade_options before quoting any directory plan price\n- Call create_upgrade_checkout to generate payment link for upgrades\n- Call submit_listing when a business owner wants to get listed\n\nNever invent prices, listing details, or payment URLs. All data must come from tool results.",
   "transport": {
     "type": "http",
-    "url": "https://aurumos-daemon-production.up.railway.app/mcp"
+    "url": "https://aurum-transfers.com/mcp"
   },
   "auth": {
     "type": "header",
     "header": "X-AurumOS-Key",
-    "description": "API key from aurum-transfers.com/referral-partners"
+    "description": "API key — contact us at aurum-transfers.com/contact for developer access"
   },
   "categories": ["travel", "booking", "directory", "caribbean"],
   "tags": [
