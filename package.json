@@ -1,7 +1,7 @@
 {
   "name": "@aurum-transfers/mcp-server",
-  "version": "2.0.0",
-  "description": "MCP server for Aurum Transfers — Jamaica airport transfers, chauffeur services, and Tourist Business Directory",
+  "version": "2.1.0",
+  "description": "MCP server for Aurum Transfers — global travel affiliate catalog (19,791 destinations, 85k tracked links, 30 affiliate programs) + Jamaica airport transfers + Tourist Business Directory",
   "type": "module",
   "main": "proxy.js",
   "bin": {
@@ -14,13 +14,19 @@
   },
   "keywords": [
     "mcp",
-    "jamaica",
-    "airport-transfer",
-    "chauffeur",
-    "caribbean",
     "travel",
+    "affiliate",
+    "directory",
+    "global-travel",
+    "car-rental",
+    "hotel-booking",
+    "airport-transfer",
+    "jamaica",
+    "caribbean",
     "booking",
-    "directory"
+    "viator",
+    "discovercars",
+    "chauffeur"
   ],
   "author": "Aurum Transfers Limited",
   "license": "MIT",
@@ -34,6 +40,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
+    "esbuild": "^0.28.0",
     "tsx": "^4.19.0",
     "typescript": "^5.7.0"
   },

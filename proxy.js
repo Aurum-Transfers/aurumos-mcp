@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 /**
- * Aurum Transfers MCP Proxy
+ * Aurum Transfers MCP Proxy (v2.1.0)
  *
  * Stdio MCP server that forwards tools/list and tools/call to the daemon's
  * POST /mcp streamable HTTP endpoint. Gives Claude Code / Claude Desktop
- * all 20 daemon tools without depending on mcp-remote (which crashes on
- * Windows with EPIPE due to stdout leakage from npx).
+ * every tool the daemon exposes — currently 30 tools spanning Jamaica
+ * transfers, the Tourist Business Directory, and the global travel
+ * affiliate catalog (Track 7) — without depending on mcp-remote (which
+ * crashes on Windows with EPIPE due to stdout leakage from npx).
  *
  * stdout is RESERVED for the JSON-RPC protocol stream — every log line
  * MUST go to process.stderr or it corrupts the channel.
@@ -75,7 +77,7 @@ async function callDaemon(method, params) {
 }
 
 const server = new Server(
-  { name: 'aurum-transfers', version: '2.0.0' },
+  { name: 'aurum-transfers', version: '2.1.0' },
   { capabilities: { tools: {} } }
 );
 
@@ -113,7 +115,7 @@ async function init() {
     await callDaemon('initialize', {
       protocolVersion: '2025-03-26',
       capabilities: {},
-      clientInfo: { name: 'aurum-proxy', version: '2.0.0' },
+      clientInfo: { name: 'aurum-proxy', version: '2.1.0' },
     });
     process.stderr.write('[aurum-proxy] connected to daemon\n');
   } catch (e) {

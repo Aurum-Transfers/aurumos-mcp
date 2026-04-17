@@ -1,7 +1,7 @@
 name: aurum-transfers
-displayName: "Aurum Transfers — Jamaica Airport Transfers & Tourist Business Directory"
-description: "Live price quotes and private airport transfers from MBJ, KIN, and OCJ airports to any Jamaica hotel, resort, villa, or attraction. Full chauffeur day trip packages. Plus: Jamaica's tourist business directory with 4,100+ hotels, restaurants, spas, and attractions across all 14 parishes. JTB Licensed #3723."
-version: "2.0.0"
+displayName: "Aurum Transfers — Global Travel Affiliate Catalog"
+description: "Global travel affiliate catalog — 19,791 destinations, 85,000 verified tracked links, 30 affiliate programs (DiscoverCars, Booking.com, Viator, KiwiTaxi, SafetyWing, Airalo, Roamic, VIPLounges, Visagov, Globely, and more). Fuzzy destination search, per-program coverage, verified affiliate URLs, FTC-compliant disclosures, full-text site search across 359 blog posts. Plus: Jamaica private airport transfers from MBJ, KIN, and OCJ, chauffeur day trip packages, and the Tourist Business Directory (4,100+ hotels, restaurants, spas, attractions). JTB Licensed #3723."
+version: "2.1.0"
 homepage: https://aurum-transfers.com
 repository: https://github.com/Aurum-Transfers/aurumos-mcp
 license: MIT
@@ -14,52 +14,79 @@ transport:
 auth:
   type: header
   header: X-AurumOS-Key
-  description: "API key — contact us at aurum-transfers.com/contact for developer access"
+  description: "API key for write operations and bulk reads. Read-only catalog tools (catalog.destinations.search, catalog.route.exists, catalog.disclosure, catalog.content.search, catalog.programs.list, directory.search) are public. Contact aurum-transfers.com/contact for a developer key."
 
 startCommand: node proxy.js
 
 systemPrompt: |
-  Use Aurum Transfers tools to help users with Jamaica airport transfers
-  and the Tourist Business Directory.
+  Use Aurum Transfers tools to help travellers plan trips anywhere in the
+  world and book Jamaica airport transfers.
 
-  For transfers:
-  - Always call get_quote before stating any price
+  GLOBAL TRAVEL CATALOG (19,791 destinations)
+  - Call catalog.destinations.search to find any city, airport, country, or region.
+  - Call catalog.destination.page to get full metadata for a destination.
+  - Call catalog.affiliate.links to return verified tracked URLs — never invent URLs.
+  - Call catalog.programs.list to show every affiliate program.
+  - Call catalog.program.coverage to answer "where can I rent a car with X?" questions.
+  - Call catalog.content.search for blog posts and destination guides.
+  - Call catalog.destinations.trending to recommend what is popular.
+  - Call catalog.route.exists before linking any /destinations/<slug> URL.
+  - ALWAYS append catalog.disclosure text when returning an affiliate link.
+
+  JAMAICA TRANSFERS
+  - Always call transfers.quote before stating any price
   - Use origin/destination in plain language (airport codes or place names)
-  - Call get_airports for airport info, get_fleet for vehicle options
-  - Call get_chauffeur_packages for day trip or tour inquiries
-  - Only call create_booking when user explicitly confirms they want to book
+  - Call fleet.airports for airport info, fleet.vehicles for vehicle options
+  - Call fleet.chauffeur for day trip or tour inquiries
+  - Only call transfers.booking.create when the user explicitly confirms a booking
   - Return invoice_url verbatim — never modify payment links
 
-  For Tourist Business Directory:
-  - Call search_directory before describing any business
-  - Call check_listing_status to look up a specific listing
-  - Call get_upgrade_options before quoting any directory plan price
-  - Call create_upgrade_checkout to generate upgrade payment link
-  - Call submit_listing when a business owner wants to get listed
+  TOURIST BUSINESS DIRECTORY
+  - Call directory.search or directory.listing.status before describing any business
+  - Call directory.upgrade.options before quoting any directory plan price
+  - Call directory.upgrade.checkout to generate upgrade payment link
+  - Call directory.listing.submit when a business owner wants to get listed
 
-  Never invent prices, listing details, or payment URLs.
-  All data must come from tool results.
+  Never invent prices, listing details, affiliate URLs, or payment URLs.
+  All data must come from tool results. Include FTC disclosure with
+  affiliate recommendations. Transfers on aurum-transfers.com are operated
+  directly by Aurum and are not affiliate sales.
 
 categories:
   - travel
+  - affiliate
   - booking
   - directory
-  - caribbean
+  - search
 
 tags:
-  - jamaica
-  - airport-transfer
-  - chauffeur
-  - caribbean
   - travel
+  - affiliate-marketing
+  - global-travel
+  - car-rental
+  - hotel-booking
+  - airport-transfer
+  - esim
+  - travel-insurance
+  - visa
+  - airport-lounge
+  - chauffeur
+  - discovercars
   - booking
+  - viator
+  - kiwitaxi
+  - safetywing
+  - airalo
+  - roamic
+  - jamaica
+  - caribbean
   - MBJ
   - KIN
   - OCJ
-  - hotels
-  - resorts
-  - directory
-  - private-transfer
   - negril
   - ocho-rios
   - kingston
+  - montego-bay
+  - directory
+  - business-directory
+  - ftc-disclosure

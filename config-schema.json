@@ -4,7 +4,7 @@
     "aurumosKey": {
       "type": "string",
       "title": "API Key",
-      "description": "API key from aurum-transfers.com/referral-partners. Required for all tool calls.",
+      "description": "API key from aurum-transfers.com/referral-partners. Optional — required only for write operations (bookings, directory edits) and bulk affiliate lookups. Public read-only catalog tools work without a key.",
       "default": ""
     },
     "defaultPassengers": {
